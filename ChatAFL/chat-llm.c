@@ -50,11 +50,11 @@ char *chat_with_llm(char *prompt, char *model, int tries, float temperature)
     char *url = NULL;
     if (strcmp(model, "instruct") == 0)
     {
-        url = "https://api.openai.com/v1/completions";
+        url = "http://host.docker.internal:5000/v1/completions";
     }
     else
     {
-        url = "https://api.openai.com/v1/chat/completions";
+        url = "http://host.docker.internal:5000/v1/chat/completions";
     }
     char *auth_header = "Authorization: Bearer " OPENAI_TOKEN;
     char *content_header = "Content-Type: application/json";
